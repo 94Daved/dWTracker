@@ -1,9 +1,10 @@
 import React, { useRef, useEffect, useMemo } from "react";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, View, useWindowDimensions } from "react-native";
 import MapView, { Marker } from "react-native-maps";
 // import MapViewDirections from "react-native-maps-directions";
 
 export default function MapTracker() {
+  const { height, width } = useWindowDimensions();
   const mapRef = useRef(null);
 
   const coordsA = {
@@ -55,7 +56,11 @@ export default function MapTracker() {
   }, [coordsA.latitude, coordsA.longitude]);
 
   return (
-    <MapView ref={mapRef} style={styles.map} initialRegion={memoizedValue}>
+    <MapView
+      ref={mapRef}
+      style={{ width, height }}
+      initialRegion={memoizedValue}
+    >
       <Marker
         coordinate={{
           latitude: coordsA.latitude,
@@ -76,9 +81,4 @@ export default function MapTracker() {
   );
 }
 
-const styles = StyleSheet.create({
-  map: {
-    width: "100%",
-    height: "100%",
-  },
-});
+const styles = StyleSheet.create({});

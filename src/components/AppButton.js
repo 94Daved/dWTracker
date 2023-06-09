@@ -1,9 +1,9 @@
 import { View, StyleSheet, Text } from "react-native";
 import { lightMode, fonts } from "../utils/color";
 
-function Button({ text = "ADD A VEHICLE" }) {
+function AppButton({ text = "ADD A VEHICLE", style }) {
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, { ...style }]}>
       <Text style={styles.text}>{text}</Text>
     </View>
   );
@@ -25,4 +25,4 @@ const styles = StyleSheet.create({
     fontSize: fonts.mediumFontSize,
   },
 });
-export default Button;
+export default AppButton;
