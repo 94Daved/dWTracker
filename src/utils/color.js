@@ -12,7 +12,7 @@ export const fonts = {
 export const lightMode = {
   //Colors
   primaryColor: "#4942E4",
-  secondaryColor: "##615cc4",
+  secondaryColor: "#615cc4",
   lightColor: "#F5F5F5",
   medieumColor: "#d1d1d1",
   strongColor: "#919491",

@@ -1,19 +1,20 @@
 import React from "react";
-import { View, StyleSheet, Platform } from "react-native";
+import { View, StyleSheet, Platform, Pressable } from "react-native";
 import { lightMode } from "../utils/color";
 import Icon from "./Icon";
 
-function MenuBurger({ style }) {
+function MenuBurger({ style, onPress }) {
   return (
-    <View
+    <Pressable
       style={[
         styles.icon,
         Platform.OS === "android" ? styles.elevation : styles.shadowProp,
         { ...style },
       ]}
+      onPress={onPress}
     >
       <Icon size={30} color="black" name="menu-outline" />
-    </View>
+    </Pressable>
   );
 }
 

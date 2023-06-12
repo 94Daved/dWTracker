@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     gap: 10,
     alignItems: "center",
-    width: "100%",
+    // width: "100%",
   },
   textTitles: {},
 });

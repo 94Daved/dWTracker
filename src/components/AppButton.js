@@ -1,11 +1,14 @@
-import { View, StyleSheet, Text } from "react-native";
+import { View, StyleSheet, Text, Pressable } from "react-native";
 import { lightMode, fonts } from "../utils/color";
 
 function AppButton({ text = "ADD A VEHICLE", style }) {
+  const handlePress = () => {
+    console.log("Hi");
+  };
   return (
-    <View style={[styles.container, { ...style }]}>
+    <Pressable style={[styles.container, { ...style }]} onPress={handlePress}>
       <Text style={styles.text}>{text}</Text>
-    </View>
+    </Pressable>
   );
 }
 

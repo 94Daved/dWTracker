@@ -1,18 +1,21 @@
 import { StyleSheet, Text, View } from "react-native";
-import AppButton from "../src/components/AppButton";
-import Icon from "../src/components/Icon";
-import Wrapper from "../src/components/Wrapper";
-import AppText from "../src/components/AppText";
 import MenuBurger from "../src/components/MenuBurger";
-import MapTracker from "../src/components/MapTracker";
 import VehicleCard from "../src/components/VehicleCard";
 import BottomSheetComponent from "../src/components/BottomSheet";
+import { NavigationContainer, DrawerActions } from "@react-navigation/native";
+
+import { useNavigation } from "expo-router";
 
 export default function Page() {
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
-      <MenuBurger style={styles.icon} />
-
+      <MenuBurger
+        style={styles.icon}
+        onPress={() => {
+          navigation.dispatch(DrawerActions.openDrawer());
+        }}
+      />
       <BottomSheetComponent />
     </View>
   );
