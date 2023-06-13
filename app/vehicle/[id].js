@@ -1,10 +1,9 @@
-import React from "react";
 import { View, StyleSheet, Text } from "react-native";
 
-function bookmarks(props) {
+function Page(props) {
   return (
     <View style={styles.container}>
-      <Text>Bookmarks</Text>
+      <Text>Single Vehicle</Text>
     </View>
   );
 }
@@ -12,4 +11,4 @@ function bookmarks(props) {
 const styles = StyleSheet.create({
   container: {},
 });
-export default bookmarks;
+export default Page;

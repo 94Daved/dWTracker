@@ -11,7 +11,6 @@ import {
   ThemeProvider,
   DarkTheme,
   DefaultTheme,
-  useTheme,
 } from "@react-navigation/native";
 
 import IconText from "../src/components/IconText";
@@ -22,7 +21,7 @@ const Drawer = withLayoutContext(DrawerNavigator);
 
 export const unstable_settings = {
   // Ensure that reloading on `/modal` keeps a back button present.
-  initialRouteName: "bookmarks",
+  initialRouteName: "index",
 };
 
 function CustomDrawerContent(props) {
@@ -45,7 +44,7 @@ function CustomDrawerContent(props) {
 
 export default function DrawerLayout() {
   const colorScheme = useColorScheme();
-  console.log(colorScheme);
+
   return (
     <>
       <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
@@ -54,8 +53,8 @@ export default function DrawerLayout() {
             name="index"
             options={{ headerShown: false, title: "Home" }}
           />
-          <Drawer.Screen name="bookmarks" options={{ title: "Payments" }} />
-          <Drawer.Screen name="vehicles" options={{ title: "Vehicles" }} />
+          <Drawer.Screen name="payments" options={{ title: "Payments" }} />
+          <Drawer.Screen name="vehicle" options={{ title: "Vehicles" }} />
         </Drawer>
       </ThemeProvider>
     </>

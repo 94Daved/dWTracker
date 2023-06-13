@@ -1,13 +1,12 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, FlatList } from "react-native";
 import MenuBurger from "../src/components/MenuBurger";
-import VehicleCard from "../src/components/VehicleCard";
 import BottomSheetComponent from "../src/components/BottomSheet";
-import { NavigationContainer, DrawerActions } from "@react-navigation/native";
-
+import { DrawerActions } from "@react-navigation/native";
 import { useNavigation } from "expo-router";
 
 export default function Page() {
   const navigation = useNavigation();
+
   return (
     <View style={styles.container}>
       <MenuBurger
